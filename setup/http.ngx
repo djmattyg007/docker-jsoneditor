@@ -1,0 +1,5 @@
+server {
+    listen 80;
+    server_name ___SERVER_NAME___;
+    include /etc/timesched/nginx/common.ngx;
+}

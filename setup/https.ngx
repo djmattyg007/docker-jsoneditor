@@ -1,0 +1,7 @@
+server {
+    listen 443 ssl;
+    server_name ___SERVER_NAME___;
+    ssl_certificate /etc/nginx/ssl/cert.pem;
+    ssl_certificate_key /etc/nginx/ssl/cert.key;
+    include /etc/timesched/nginx/common.ngx;
+}
