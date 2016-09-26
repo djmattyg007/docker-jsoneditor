@@ -1,14 +1,14 @@
 **Application**
 
-[timesched](https://github.com/djmattyg007/timesched/)
+[JSON Editor](https://github.com/josdejong/jsoneditor/)
 
 **Description**
 
-Timesched is a simple application that lets you organise meetups with other people around the world. It provides a simple timeline to visualise time periods across timezones, and to share proposed meeting times with other people.
+JSON Editor is a web-based tool that lets you view, edit, format and validate JSON. It's provided as a library, making it easy to customise and integrate into existing applications, or to run as a standalone application.
 
 **Build notes**
 
-This uses a custom build from a fork of the timesched repository from mitsuhiko.
+A custom index.html file is contained within this repository that powers the frontend.
 
 **Usage**
 ```
@@ -19,7 +19,7 @@ docker run -d \
     -v <path to SSL certificate files>:/etc/nginx/ssl \
     -e TIMESCHED_HTTP_SERVERNAME=<domain for HTTP endpoint> \
     -e TIMESCHED_HTTPS_SERVERNAME=<domain for HTTPS endpoint> \
-    djmattyg007/timesched
+    djmattyg007/jsoneditor
 ```
 
 Please replace all user variables in the above command defined by <> with the correct values.
@@ -29,5 +29,5 @@ You can opt out of HTTP or HTTPS by not supplying the relevant environment varia
 
 Connect to the site using the domain you specified above for the relevant protocol. Example:
 
-http://www.myexampletimesched.com
-https://secure.myexampletimesched.com
+http://www.myexamplejsoneditor.com
+https://secure.myexamplejsoneditor.com
