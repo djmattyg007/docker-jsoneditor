@@ -2,6 +2,7 @@ root /data;
 
 location / {
     index index.html;
+    try_files $uri $uri/ =404;
 }
 
 error_page 500 502 503 504 /50x.html;

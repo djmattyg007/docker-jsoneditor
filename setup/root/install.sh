@@ -18,7 +18,7 @@ mkdir -p /data
 curl -L -sS -o /data/jsoneditor.min.js https://raw.githubusercontent.com/josdejong/jsoneditor/v${JSONEDITOR_VERSION}/dist/jsoneditor.min.js
 curl -L -sS -o /data/jsoneditor.min.css https://raw.githubusercontent.com/josdejong/jsoneditor/v${JSONEDITOR_VERSION}/dist/jsoneditor.min.css
 curl -L -sS --create-dirs -o /data/img/jsoneditor-icons.svg https://raw.githubusercontent.com/josdejong/jsoneditor/v${JSONEDITOR_VERSION}/dist/img/jsoneditor-icons.svg
-chmod -R -w /data
+chmod -R -w /data && chmod -R a+rX /data
 
 # Cleanup
 pacman_cleanup
