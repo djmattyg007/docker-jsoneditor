@@ -14,9 +14,10 @@ ln -sf /dev/stdout /var/log/nginx/access.log
 ln -sf /dev/stderr /var/log/nginx/error.log
 
 echo "Downloading jsoneditor v${JSONEDITOR_VERSION} code"
+mkdir -p /data
 curl -L -sS -o /data/jsoneditor.min.js https://raw.githubusercontent.com/josdejong/jsoneditor/v${JSONEDITOR_VERSION}/dist/jsoneditor.min.js
 curl -L -sS -o /data/jsoneditor.min.css https://raw.githubusercontent.com/josdejong/jsoneditor/v${JSONEDITOR_VERSION}/dist/jsoneditor.min.css
-curl -L -sS -create-dirs -o /data/img/jsoneditor-icons.svg https://raw.githubusercontent.com/josdejong/jsoneditor/v${JSONEDITOR_VERSION}/dist/img/jsoneditor-icons.svg
+curl -L -sS --create-dirs -o /data/img/jsoneditor-icons.svg https://raw.githubusercontent.com/josdejong/jsoneditor/v${JSONEDITOR_VERSION}/dist/img/jsoneditor-icons.svg
 chmod -R -w /data
 
 # Cleanup
