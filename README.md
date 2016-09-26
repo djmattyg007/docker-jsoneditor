@@ -17,8 +17,8 @@ docker run -d \
     --name=<container name> \
     -v /etc/localtime:/etc/localtime \
     -v <path to SSL certificate files>:/etc/nginx/ssl \
-    -e TIMESCHED_HTTP_SERVERNAME=<domain for HTTP endpoint> \
-    -e TIMESCHED_HTTPS_SERVERNAME=<domain for HTTPS endpoint> \
+    -e JSONEDITOR_HTTP_SERVERNAME=<domain for HTTP endpoint> \
+    -e JSONEDITOR_HTTPS_SERVERNAME=<domain for HTTPS endpoint> \
     djmattyg007/jsoneditor
 ```
 
