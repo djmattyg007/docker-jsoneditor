@@ -1,7 +1,7 @@
-FROM djmattyg007/arch-runit-base:2016.09.26-1
+FROM djmattyg007/arch-runit-base:2016.11.07-1
 MAINTAINER djmattyg007
 
-ENV JSONEDITORIMAGE_VERSION=2016.10.22-1
+ENV JSONEDITORIMAGE_VERSION=2016.11.07-1
 
 # Add install bash script
 COPY setup/root/*.sh /root/
@@ -13,7 +13,7 @@ COPY setup/*.ngx /etc/jsoneditor/nginx/
 COPY setup/nginx.custom.conf /etc/nginx/
 COPY setup/index.html /data/index.html
 
-ENV JSONEDITOR_VERSION=5.5.9
+ENV JSONEDITOR_VERSION=5.5.10
 
 # Run bash script to install nginx and download the jsoneditor code
 RUN /root/install.sh && \
