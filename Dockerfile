@@ -1,7 +1,7 @@
-FROM djmattyg007/arch-runit-base:2017.01.12-2
+FROM djmattyg007/arch-runit-base:2017.01.18-1
 MAINTAINER djmattyg007
 
-ENV JSONEDITORIMAGE_VERSION=2017.01.12-1
+ENV JSONEDITORIMAGE_VERSION=2017.01.18-1
 
 # Add install bash script
 COPY setup/root/*.sh /root/
