@@ -7,7 +7,7 @@ source /root/functions.sh
 
 # Install any packages
 echo "Installing nginx..."
-pacman -S --noconfirm nginx
+pacman -S --noconfirm --noprogressbar --color=never nginx
 mkdir -p /var/log/nginx
 chmod 775 /var/log/nginx && chown http:http /var/log/nginx
 ln -sf /dev/stdout /var/log/nginx/access.log
