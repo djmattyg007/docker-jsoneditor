@@ -91,7 +91,7 @@
     alert(err.toString());
   };
 
-  var json = {
+  var startJson = {
     "array": [1, 2, 3],
     "boolean": true,
     "null": null,
@@ -100,8 +100,8 @@
     "string": "Hello World"
   };
 
-  codeEditor = new JSONEditor(codeContainer, {mode: "code", onError: appOnError}, json);
-  treeEditor = new JSONEditor(treeContainer, {mode: "tree", onError: appOnError}, json);
+  codeEditor = new JSONEditor(codeContainer, {mode: "code", onError: appOnError}, startJson);
+  treeEditor = new JSONEditor(treeContainer, {mode: "tree", onError: appOnError}, startJson);
 
   toTree = document.getElementById("toTree");
   toTree.onclick = function() {
