@@ -16,8 +16,8 @@ A custom index.html file is contained within this repository that powers the fro
 docker run \
     --net="host" \
     --name=<container name> \
-    -v /etc/localtime:/etc/localtime \
-    -v <path to SSL certificate files>:/etc/nginx/ssl \
+    -v /etc/localtime:/etc/localtime:ro \
+    -v <path to SSL certificate files>:/etc/nginx/ssl:ro \
     -e JSONEDITOR_HTTP_SERVERNAME=<domain for HTTP endpoint> \
     -e JSONEDITOR_HTTPS_SERVERNAME=<domain for HTTPS endpoint> \
     djmattyg007/jsoneditor
