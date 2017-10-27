@@ -21,4 +21,6 @@ fi
 
 # Finally, run nginx.
 echo "[info] Starting nginx"
+# Don't use chpst - nginx needs to start as root to bind ports.
+# It can be trusted to drop privileges properly after binding ports.
 exec /usr/bin/nginx -c /etc/nginx/nginx.custom.conf 
