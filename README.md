@@ -11,8 +11,9 @@ JSON Editor is a web-based tool that lets you view, edit, format and validate JS
 A custom index.html file is contained within this repository that powers the frontend.
 
 **Usage**
+
 ```
-docker run -d \
+docker run \
     --net="host" \
     --name=<container name> \
     -v /etc/localtime:/etc/localtime \
