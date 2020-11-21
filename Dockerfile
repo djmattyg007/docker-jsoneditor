@@ -1,22 +1,20 @@
-FROM djmattyg007/arch-runit-base:2017.10.27-1
+FROM nginx:1.18.0-alpine AS builder
 MAINTAINER djmattyg007
 
-ENV JSONEDITORIMAGE_VERSION=2017.10.27-1
+ENV JSONEDITOR_IMAGE_VERSION=2020.11.21-1
+ENV JSONEDITORONLINE_VERSION=2020.11.21-1
 
-# Add install bash script
-COPY setup/root/*.sh /root/
-# Add runit init script
-COPY setup/init.sh /etc/service/nginx/run
-# Add nginx server block files and templates
-COPY setup/*.ngx /etc/jsoneditor/nginx/
-# Add main nginx config file
-COPY setup/nginx.custom.conf /etc/nginx/
-COPY setup/index.html /data/index.html
+RUN apk add --no-cache bash git yarn
 
-ENV JSONEDITOR_VERSION=5.9.6
+RUN git clone https://github.com/djmattyg007/jsoneditoronline.git /tmp/jsoneditoronline
 
-# Run bash script to install nginx and download the jsoneditor code
-RUN /root/install.sh && \
-    rm /root/*.sh
+WORKDIR /tmp/jsoneditoronline
 
-ENTRYPOINT ["/usr/bin/init"]
+RUN git checkout "refs/tags/${JSONEDITORONLINE_VERSION}" && \
+    ls -lah && \
+    ./build.sh
+
+
+FROM nginx:1.18.0-alpine
+
+COPY --from=builder /tmp/jsoneditoronline/dist /usr/share/nginx/html
